@@ -1,0 +1,16 @@
+*
+!analysis/README.md
+!config
+!config/*
+!resources
+!resources/*
+!workflow
+!workflow/**
+!.github
+!.github/**
+!.gitignore
+!.gitattributes
+!.editorconfig
+!.test
+!LICENSE
+!README.md
