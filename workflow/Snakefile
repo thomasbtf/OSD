@@ -19,6 +19,7 @@ singularity: "docker://continuumio/miniconda3"
 include: "rules/common.smk"
 include: "rules/other.smk"
 include: "rules/ref.smk"
+include: "rules/external_arg_tools.smk"
 
 rule all:
     input:
