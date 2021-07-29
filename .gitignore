@@ -2,8 +2,6 @@
 !analysis/README.md
 !config
 !config/**
-!resources
-!resources/*
 !workflow
 !workflow/**
 !.github
