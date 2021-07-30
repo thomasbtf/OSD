@@ -1,14 +1,16 @@
 
 channels:
+  - bioconda
   - conda-forge
-  - bio-conda
+  - default
 dependencies:
-  - python=2.7.18
+  - python=2.7
   - diamond=0.9.24
-  - trimmomatic=0.39
-  - vsearch=2.17.1
-  - bedtools=2.30.0
-  - bowtie2=2.4.4
-  - samtools=1.13
+  - trimmomatic
+  - vsearch
+  - bedtools
+  - bowtie2
+  - samtools
+  - pip
   - pip:
     - deeparg==1.0.2

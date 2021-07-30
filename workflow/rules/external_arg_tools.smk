@@ -6,7 +6,7 @@ rule downlaod_deep_arg:
     conda:
         "../envs/deeparg.yaml"
     shell:
-        "deeparg download_data -o {output}"
+        "(deeparg download_data -o {output}) 2> {log}"
 
 
 rule deep_arg_short_reads:
@@ -22,9 +22,9 @@ rule deep_arg_short_reads:
         "../envs/deeparg.yaml"
     shell:
         """
-        deeparg short_reads_pipeline \
+        (deeparg short_reads_pipeline \
         --forward_pe_file {input.fq1} \
         --reverse_pe_file {input.fq2} \
         --output_file {output} \
-        -d {input.data}
+        -d {input.data}) 2> {log}
         """
