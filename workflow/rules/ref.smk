@@ -25,16 +25,7 @@ rule download_OSD2014_workable_data:
         "(curl -k --output {output} \"http://mb3is.megx.net/index.php/s/XXqTven495RZmoA/download?path=%2F2014%2Fdatasets&files=workable\") 2> {log}"
 
 
-rule download_CARD:
-    output:
-        temp("resources/card-v3.1.3.tar.bz2"),
-    log:
-        "logs/download_CARD.log"
-    shell:
-        "(curl \"https://card.mcmaster.ca/download/0/broadstreet-v3.1.3.tar.bz2\" --output {output}) 2> {log}"
-
-
-rule extract_OSD:
+checkpoint extract_OSD:
     input:
         "resources/workable.tar",
     output:
@@ -43,6 +34,15 @@ rule extract_OSD:
         "logs/extract_OSD.log"
     shell:
         "([ -d {output} ] || mkdir -p {output} & unzip {input} -d {output}) 2> {log}"
+
+
+rule download_CARD:
+    output:
+        temp("resources/card-v3.1.3.tar.bz2"),
+    log:
+        "logs/download_CARD.log"
+    shell:
+        "(curl \"https://card.mcmaster.ca/download/0/broadstreet-v3.1.3.tar.bz2\" --output {output}) 2> {log}"
 
 
 rule extract_CARD:
