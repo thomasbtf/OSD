@@ -38,7 +38,7 @@ rule deep_arg_short_reads:
 
 rule deep_arg_predict:
     input:
-        fasta = "resources/workable-OSD-2014/workable/metagenomes/merged/{sample}",
+        fasta = "resources/workable-OSD-2014/workable/metagenomes/merged/{sample}.fastq.gz",
         data = "resources/deeparg",
     output:
         "results/deeparg/{sample}/{sample}.mapping.ARG",

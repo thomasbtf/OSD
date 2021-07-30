@@ -12,7 +12,7 @@ import os
 
 def get_merged_metagenomes():
     merged_metagenomes = os.listdir("resources/workable-OSD-2014/workable/metagenomes/merged")
-    merged_metagenomes = [filename for filename in merged_metagenomes if filename.endswith(".fastq.gz")]
+    merged_metagenomes = [filename.replace(".fastq.gz", "") for filename in merged_metagenomes if filename.endswith(".fastq.gz")]
     return merged_metagenomes
 
 def get_deep_arg_call(wildcards): 
