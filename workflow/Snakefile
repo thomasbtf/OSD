@@ -16,10 +16,6 @@ pepfile: config["pepfile"]
 report: "report/workflow.rst"
 
 
-# Allow users to fix the underlying OS via singularity.
-singularity: "docker://continuumio/miniconda3"
-
-
 include: "rules/common.smk"
 include: "rules/other.smk"
 include: "rules/ref.smk"
