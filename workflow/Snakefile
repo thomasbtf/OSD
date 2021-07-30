@@ -6,11 +6,15 @@ from snakemake.utils import min_version
 
 min_version("6.3.0")
 
+
 configfile: "config/config.yaml"
+
 
 pepfile: config["pepfile"]
 
+
 report: "report/workflow.rst"
+
 
 # Allow users to fix the underlying OS via singularity.
 singularity: "docker://continuumio/miniconda3"
@@ -21,7 +25,7 @@ include: "rules/other.smk"
 include: "rules/ref.smk"
 include: "rules/external_arg_tools.smk"
 
+
 rule all:
     input:
-        get_deep_arg_call
-
+        get_deep_arg_call,
