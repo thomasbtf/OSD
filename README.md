@@ -5,10 +5,6 @@
 
 This repository contains an antibiotic resistance analysis of the 2014 [Ocean Sampling Day (OSD)](https://github.com/MicroB3-IS/osd-analysis) data.
 
-## Authors
-
-* Thomas Battenfeld (@thomasbtf)
-
 ## Usage
 
 If you use this workflow in a paper, don't forget to give credits to the authors by citing the URL of this (original) repository.
@@ -44,9 +40,8 @@ using `$N` cores. See the [Snakemake documentation](https://snakemake.readthedoc
 
 ### Step 4: Investigate results
 
-After successful execution, you can find a self-contained interactive HTML report in the results folder:
+After successful execution, you can find a self-contained interactive HTML report in the results folder.
 This report can, e.g., be forwarded to your collaborators.
-An example (using some trivial test data) can be seen [here](https://cdn.rawgit.com/snakemake-workflows/rna-seq-kallisto-sleuth/master/.test/report.html).
 
 ### Step 5: Contribute back
 
@@ -61,4 +56,3 @@ In case you have also changed or added steps, please consider contributing them 
 ## Testing
 
 Test cases are in the subfolder `.test`. They are automatically executed via continuous integration with [Github Actions](https://github.com/features/actions).
-
