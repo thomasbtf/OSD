@@ -60,9 +60,9 @@ rule aggregate_deep_arg:
     output:
         "results/tables/deep_arg_calls.tsv",
     params:
-        samples = get_osd_samples,
+        samples=get_osd_samples,
     log:
-        "logs/aggregate_deep_arg.log"
+        "logs/aggregate_deep_arg.log",
     conda:
         "../envs/pandas.yaml"
     script:
@@ -73,9 +73,9 @@ rule plot_deep_arg:
     input:
         "results/tables/deep_arg_calls.tsv",
     output:
-        all_calls = "results/plots/deep_arg_all_calls.svg",
+        all_calls="results/plots/deep_arg_all_calls.svg",
     log:
-        "logs/plot_deep_arg.log"
+        "logs/plot_deep_arg.log",
     conda:
         "../envs/altair.yaml"
     notebook:
