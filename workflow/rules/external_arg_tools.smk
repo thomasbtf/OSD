@@ -78,7 +78,7 @@ rule plot_deep_arg:
             caption="../report/deep-arg-all-calls.rst",
             category="1. Deep ARG",
             subcategory="1. Overview",
-        )
+        ),
     log:
         "logs/plot_deep_arg.log",
     conda:

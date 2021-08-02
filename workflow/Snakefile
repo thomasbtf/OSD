@@ -24,4 +24,4 @@ include: "rules/report.smk"
 
 rule all:
     input:
-        "results/OSD14-ARG-Report.zip"
+        "results/OSD14-ARG-Report.zip",
