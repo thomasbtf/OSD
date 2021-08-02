@@ -52,3 +52,31 @@ rule deep_arg_predict:
         "../envs/deeparg.yaml"
     shell:
         "(deeparg predict --model SS --type nucl -d {input.data} --input {input.fasta} --out {params.outdir}) 2> {log}"
+
+
+rule aggregate_deep_arg:
+    input:
+        get_deep_arg_call,
+    output:
+        "results/tables/deep_arg_calls.tsv",
+    params:
+        samples = get_osd_samples,
+    log:
+        "logs/aggregate_deep_arg.log"
+    conda:
+        "../envs/pandas.yaml"
+    script:
+        "../scripts/aggregate_deep_arg.py"
+
+
+rule plot_deep_arg:
+    input:
+        "results/tables/deep_arg_calls.tsv",
+    output:
+        all_calls = "results/plots/deep_arg_all_calls.svg",
+    log:
+        "logs/plot_deep_arg.log"
+    conda:
+        "../envs/altair.yaml"
+    notebook:
+        "../notebooks/plot_deep_arg.py.ipynb"

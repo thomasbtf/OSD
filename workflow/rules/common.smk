@@ -23,8 +23,13 @@ def get_merged_metagenomes():
     return merged_metagenomes
 
 
-def get_deep_arg_call(wildcards):
+def get_osd_samples(wildcards):
     checkpoint_output = checkpoints.extract_OSD.get(**wildcards).output[0]
+    return get_merged_metagenomes()
+
+
+def get_deep_arg_call(wildcards): 
+    samples = get_osd_samples(wildcards)
     return expand(
-        "results/deeparg/{sample}/{sample}.mapping.ARG", sample=get_merged_metagenomes()
+        "results/deeparg/{sample}/{sample}.mapping.ARG", sample=samples
     )
