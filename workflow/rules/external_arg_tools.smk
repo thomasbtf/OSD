@@ -73,10 +73,15 @@ rule plot_deep_arg:
     input:
         "results/tables/deep_arg_calls.tsv",
     output:
-        all_calls="results/plots/deep_arg_all_calls.svg",
+        report(
+            "results/plots/deep_arg_all_calls.svg",
+            caption="../report/deep-arg-all-calls.rst",
+            category="1. Deep ARG",
+            subcategory="1. Overview",
+        )
     log:
         "logs/plot_deep_arg.log",
     conda:
         "../envs/altair.yaml"
     notebook:
-        "../notebooks/plot_deep_arg.py.ipynb"
+        "../notebooks/plot_deep_arg_all_calls.py.ipynb"

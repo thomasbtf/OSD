@@ -1,0 +1,2 @@
+Antibiotic resistance gene (ARG) classes over all samples from the Ocean Sampling Day 2014, as determined by `DeepARG <https://bench.cs.vt.edu/deeparg>`_.
+Horizontal axis count of genes over all samples, vertical axis shows the called ARG class.
