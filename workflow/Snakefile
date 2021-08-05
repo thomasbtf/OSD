@@ -19,6 +19,7 @@ report: "report/workflow.rst"
 include: "rules/common.smk"
 include: "rules/ref.smk"
 include: "rules/external_arg_tools.smk"
+include: "rules/osd.smk"
 include: "rules/report.smk"
 
 

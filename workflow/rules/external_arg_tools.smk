@@ -58,7 +58,7 @@ rule aggregate_deep_arg:
     input:
         get_deep_arg_call,
     output:
-        "results/tables/deep_arg_calls.tsv",
+        "results/tables/deep_arg_all_calls.tsv",
     params:
         samples=get_osd_samples,
     log:
@@ -71,12 +71,12 @@ rule aggregate_deep_arg:
 
 rule plot_deep_arg:
     input:
-        "results/tables/deep_arg_calls.tsv",
+        "results/tables/deep_arg_all_calls.tsv",
     output:
         report(
             "results/plots/deep_arg_all_calls.svg",
             caption="../report/deep-arg-all-calls.rst",
-            category="1. Deep ARG",
+            category="2. Deep ARG",
             subcategory="1. Overview",
         ),
     log:
