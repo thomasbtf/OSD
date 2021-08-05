@@ -9,7 +9,7 @@ rule plot_osd_locations:
             subcategory="1. OSD Location",
         ),
     log:
-        "logs/plot_osd_locations.log"
+        "logs/plot_osd_locations.log",
     conda:
         "../envs/altair.yaml"
     notebook:
