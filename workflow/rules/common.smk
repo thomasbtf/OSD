@@ -22,9 +22,7 @@ def get_merged_metagenomes():
     ]
 
     merged_metagenomes = [
-        filename
-        for filename in merged_metagenomes
-        if "_ME_" in filename
+        filename for filename in merged_metagenomes if "_ME_" in filename
     ]
 
     return merged_metagenomes
