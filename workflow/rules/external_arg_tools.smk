@@ -96,11 +96,11 @@ rule plot_deep_arg_call:
             caption="../report/deep-arg-all-calls.rst",
             category="2. Deep ARG",
             subcategory="2. ARGs per Sample",
-        )
+        ),
     params:
-        sample = lambda wildcards: wildcards.sample
+        sample=lambda wildcards: wildcards.sample,
     log:
-        "logs/plot_deep_arg_call/{sample}.log"
+        "logs/plot_deep_arg_call/{sample}.log",
     conda:
         "../envs/altair.yaml"
     notebook:

@@ -2,7 +2,7 @@ rule snakemake_reports:
     input:
         "results/plots/osd-locations.svg",
         "results/plots/deep_arg_all_calls.svg",
-        get_deep_arg_plots
+        get_deep_arg_plots,
     output:
         "results/OSD14-ARG-Report.zip",
     log:
