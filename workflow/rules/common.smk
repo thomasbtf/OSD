@@ -36,3 +36,8 @@ def get_osd_samples(wildcards):
 def get_deep_arg_call(wildcards):
     samples = get_osd_samples(wildcards)
     return expand("results/deeparg/{sample}/{sample}.mapping.ARG", sample=samples)
+
+
+def get_deep_arg_plots(wildcards):
+    samples = get_osd_samples(wildcards)
+    return expand("results/plots/deeparg/{sample}.svg", sample=samples)

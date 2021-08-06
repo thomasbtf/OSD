@@ -69,7 +69,7 @@ rule aggregate_deep_arg:
         "../scripts/aggregate_deep_arg.py"
 
 
-rule plot_deep_arg:
+rule plot_all_deep_arg:
     input:
         "results/tables/deep_arg_all_calls.tsv",
     output:
@@ -80,8 +80,28 @@ rule plot_deep_arg:
             subcategory="1. Overview",
         ),
     log:
-        "logs/plot_deep_arg.log",
+        "logs/plot_all_deep_arg.log",
     conda:
         "../envs/altair.yaml"
     notebook:
         "../notebooks/plot_deep_arg_all_calls.py.ipynb"
+
+
+rule plot_deep_arg_call:
+    input:
+        "results/deeparg/{sample}/{sample}.mapping.ARG",
+    output:
+        report(
+            "results/plots/deeparg/{sample}.svg",
+            caption="../report/deep-arg-all-calls.rst",
+            category="2. Deep ARG",
+            subcategory="2. ARGs per Sample",
+        )
+    params:
+        sample = lambda wildcards: wildcards.sample
+    log:
+        "logs/plot_deep_arg_call/{sample}.log"
+    conda:
+        "../envs/altair.yaml"
+    notebook:
+        "../notebooks/plot_deep_arg_call.py.ipynb"
