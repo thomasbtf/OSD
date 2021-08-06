@@ -20,6 +20,13 @@ def get_merged_metagenomes():
         for filename in merged_metagenomes
         if filename.endswith(".fastq.gz")
     ]
+
+    merged_metagenomes = [
+        filename
+        for filename in merged_metagenomes
+        if "_ME_" in filename
+    ]
+
     return merged_metagenomes
 
 
